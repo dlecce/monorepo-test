@@ -1,7 +1,6 @@
 {
   "name": "lit-library",
   "version": "1.0.0",
-  "module": "dist/lit-library.es.js",
   "type": "module",
   "exports": {
     "./diff-view": "./dist/components/diff-view.js",
