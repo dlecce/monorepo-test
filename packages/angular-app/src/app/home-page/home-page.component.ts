@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
     <p>
       home-page works!
     </p>
+    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
   `,
-  styles: ``
+  styles: ``,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePageComponent {
 
