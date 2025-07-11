@@ -16,16 +16,16 @@ export class HexColorPicker extends LitElement {
 
     firstUpdated() {
         this.reactRoot = ReactDOM.createRoot(this.renderRoot);
-        this._renderReactComponent();
+        this.renderReactComponent();
     }
 
     updated() {
-        this._renderReactComponent();
+        this.renderReactComponent();
     }
 
-    private _emitChange = (color: string) => {
+    private emitChange = (color: string) => {
         this.color = color;
-        const event = new CustomEvent('onChange', {
+        const event = new CustomEvent('colorChange', {
             detail: color,
             bubbles: true,
             composed: true
@@ -33,20 +33,18 @@ export class HexColorPicker extends LitElement {
         this.dispatchEvent(event);
     }
 
-    private _renderReactComponent() {
-        console.log('_renderReactComponent()');
+    private renderReactComponent() {
         if (this.reactRoot) {
             this.reactRoot.render(
                 React.createElement(ReactHexColorPicker, {
                     color: this.color,
-                    onChange: this._emitChange
+                    onChange: this.emitChange
                 })
             );
         }
     }
 
     disconnectedCallback() {
-        super.disconnectedCallback();
         if (this.reactRoot) {
             this.reactRoot.unmount();
         }

@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import 'lit-library/hex-color-picker';
+// import 'lit-library/hex-color-picker';
 
 @Component({
   selector: 'app-hex-color-picker',
@@ -7,7 +7,7 @@ import 'lit-library/hex-color-picker';
   template: `
     <hex-color-picker 
       [color]="initialColor" 
-      (onChange)="onColorChange($event)"
+      (colorChange)="onColorChange($event)"
     />
     <pre class="selected-color">Selected color: {{selectedColor}}</pre>
   `,

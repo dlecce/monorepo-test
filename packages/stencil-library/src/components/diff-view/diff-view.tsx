@@ -1,27 +1,29 @@
-import { LitElement, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js'
+import { Component, Prop, Element } from '@stencil/core';
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 import { generateDiffFile } from '@git-diff-view/file';
 import { DiffView as ReactDiffView, DiffModeEnum } from '@git-diff-view/react';
-import cssText from '@git-diff-view/react/styles/diff-view.css?inline';
 
-@customElement('diff-view')
-export class DiffView extends LitElement {
-    @property() oldData: any;
-    @property() newData: any;
-    @property() viewMode: 'split' | 'unified' = 'split';
+@Component({
+    tag: 'diff-view',
+    styleUrl: 'diff-view.css',
+    shadow: true,
+})
+export class DiffView {
+    @Element() el: HTMLElement;
+
+    @Prop() oldData: any;
+    @Prop() newData: any;
+    @Prop() viewMode: 'split' | 'unified' = 'split';
 
     private reactRoot?: ReactDOM.Root;
 
-    static styles = unsafeCSS(cssText);
-
-    firstUpdated() {
-        this.reactRoot = ReactDOM.createRoot(this.renderRoot);
+    componentDidLoad() {
+        this.reactRoot = ReactDOM.createRoot(this.el.shadowRoot);
         this.renderReactComponent();
     }
 
-    updated() {
+    componentDidUpdate() {
         this.renderReactComponent();
     }
 
