@@ -1,5 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import 'lit-library/hex-color-picker';
+// import 'lit-library/hex-color-picker';
+import 'r2wc-library/hex-color-picker';
 
 @Component({
   selector: 'app-hex-color-picker',

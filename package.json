@@ -8,6 +8,7 @@
     "clean:modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "build:angular-app": "yarn workspace angular-app run build",
     "build:lit-library": "yarn workspace lit-library run build",
+    "build:r2wc-library": "yarn workspace r2wc-library run build",
     "build:stencil-library": "yarn workspace stencil-library run build",
     "start:angular-app": "yarn workspace angular-app run start",
     "start:stencil-library": "yarn workspace stencil-library run start"
