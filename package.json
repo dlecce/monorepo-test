@@ -1,0 +1,16 @@
+{
+  "name": "monorepo-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean:modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "build:lit-library": "yarn workspace lit-library run build",
+    "start:angular-app": "yarn workspace angular-app run start",
+    "build:angular-app": "yarn workspace angular-app run build"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

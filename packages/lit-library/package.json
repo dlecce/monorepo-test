@@ -1,0 +1,32 @@
+{
+  "name": "lit-library",
+  "version": "1.0.0",
+  "module": "dist/lit-library.es.js",
+  "type": "module",
+  "exports": {
+    "./diff-view": "./dist/components/diff-view.js",
+    "./hex-color-picker": "./dist/components/hex-color-picker.js"
+  },
+  "scripts": {
+    "build": "tsc && vite build --mode production",
+    "dev": "vite"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@git-diff-view/file": "^0.0.30",
+    "@git-diff-view/react": "^0.0.30",
+    "lit": "^3.3.0",
+    "react": "^18.0.0",
+    "react-colorful": "^5.6.1",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.6.0",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.4"
+  }
+}
