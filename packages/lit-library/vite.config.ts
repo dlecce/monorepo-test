@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [
     react(),
     visualizer({
-      open: true,
       filename: 'bundle-stats.html',
       gzipSize: true
     })

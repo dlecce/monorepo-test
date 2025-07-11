@@ -1,4 +1,7 @@
 import { Config } from '@stencil/core';
+import alias from '@rollup/plugin-alias';
+import { visualizer } from 'rollup-plugin-visualizer';
+import { resolve } from 'path';
 
 export const config: Config = {
   namespace: 'stencil-library',
@@ -11,7 +14,22 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-  testing: {
-    browserHeadless: "shell",
+  rollupPlugins: {
+    before: [
+      alias({
+        entries: [
+          {
+            find: '@git-diff-view/lowlight',
+            replacement: resolve(__dirname, 'src/utils/lowlight/index.ts'),
+          },
+        ],
+      }),
+    ],
+    after: [
+      visualizer({
+        filename: 'bundle-stats.html',
+        gzipSize: true
+      }),
+    ],
   },
 };
