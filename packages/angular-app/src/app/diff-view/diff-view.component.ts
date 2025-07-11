@@ -1,6 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import 'lit-library/diff-view';
-import 'r2wc-library/diff-view';
+import 'lit-library/diff-view';
+// import 'r2wc-library/diff-view';
 
 @Component({
   selector: 'app-diff-view',
