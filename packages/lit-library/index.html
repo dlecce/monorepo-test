@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + Lit</title>
+  <script type="module" src="/src/components/diff-view.ts"></script>
+  <script type="module" src="/src/components/hex-color-picker.ts"></script>
+</head>
+
+<body>
+  <h1>Vite + Lit</h1>
+
+  <diff-view></diff-view>
+  <hex-color-picker></hex-color-picker>
+
+  <script>
+    const diffView = document.querySelector('diff-view');
+    diffView.oldData = {
+      id: 1,
+      name: "Mario Rossi",
+      email: "mario.rossi@example.com",
+      isActive: true,
+      roles: ["admin", "editor"],
+      profile: {
+        age: 36,
+        city: "Milano",
+        interests: ["musica", "programmazione", "viaggi"]
+      }
+    };
+    diffView.newData = {
+      id: 1,
+      name: "Mario Verdi",
+      email: "mario.verdi@example.com",
+      isActive: true,
+      roles: ["admin"],
+      profile: {
+        age: 36,
+        city: "Milano",
+        interests: ["musica", "programmazione", "viaggi"]
+      }
+    };
+  </script>
+</body>
+
+</html>

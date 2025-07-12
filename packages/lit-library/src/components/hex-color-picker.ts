@@ -6,7 +6,7 @@ import { HexColorPicker as ReactHexColorPicker } from 'react-colorful';
 
 @customElement('hex-color-picker')
 export class HexColorPicker extends LitElement {
-    @property({ reflect: true }) color: string = '#ffffff';
+    @property() color: string = '#ffffff';
 
     private reactRoot?: ReactDOM.Root;
 
@@ -24,7 +24,6 @@ export class HexColorPicker extends LitElement {
     }
 
     private emitChange = (color: string) => {
-        this.color = color;
         const event = new CustomEvent('colorChange', {
             detail: color,
             bubbles: true,

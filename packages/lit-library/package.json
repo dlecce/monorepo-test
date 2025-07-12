@@ -7,7 +7,7 @@
     "./hex-color-picker": "./dist/components/hex-color-picker.js"
   },
   "scripts": {
-    "build": "tsc && vite build --mode production",
+    "build": "tsc && vite build",
     "dev": "vite"
   },
   "license": "MIT",
