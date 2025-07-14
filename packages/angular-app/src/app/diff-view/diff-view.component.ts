@@ -59,14 +59,16 @@ export class DiffViewComponent {
   }
 
   changeNewData() {
+    const id = this.newData.id;
+    const age = this.newData.profile.age;
     this.newData = {
-      id: 1,
-      name: "Mario Bianchi",
+      id: id + 1,
+      name: "Mario Verdi",
       email: "mario.bianchi@example.com",
       isActive: true,
       roles: ["admin"],
       profile: {
-        age: 45,
+        age: age + 1,
         city: "Roma",
         interests: ["cucina"]
       }
