@@ -38,4 +38,4 @@ To partially address this, frameworks like Lit or Stencil.js allow you to use th
 
 If two-way binding is needed, you must **manually handle it** using custom events. The Web Component should emit a custom event (e.g., `colorChanged`) when the property changes, and Angular should listen to that event and update its internal state accordingly.
 
-This is exactly what is done in the test app for the hex-color-picker component (see `src/app/hex-color-picker/hex-color-picker.component.ts`).
+This is exactly what is done in the test app for the hex-color-picker component ([`src/app/hex-color-picker/hex-color-picker.component.ts`](src/app/hex-color-picker/hex-color-picker.component.ts)).

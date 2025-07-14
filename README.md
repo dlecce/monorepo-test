@@ -17,7 +17,7 @@ The project is a monorepo ([Yarn workspace](https://yarnpkg.com/features/workspa
 
 | Package | Description |
 |---|---|
-| `angular-app` | Test Angular application that consumes the Web Component libraries |
+| [`angular-app`](packages/angular-app/README.md) | Test Angular application that consumes the Web Component libraries |
 | `lit-library` | Library built using Lit + Vite |
 | `r2wc-library` | Library built using R2WC + Vite |
 | `stencil-library` | Library built using Stencil.js |
