@@ -8,6 +8,8 @@
     - [`react-to-web-component (R2WC)`](https://github.com/bitovi/react-to-web-component)
     - [Stencil.js](https://stenciljs.com/)
 
+<br>
+
 ## 📦 Project Overview
 
 The project is a monorepo ([Yarn workspace](https://yarnpkg.com/features/workspaces)), containing the following packages:
@@ -28,6 +30,7 @@ Each implementation of the library exposes two Web Components:
 | `<diff-view>` | [git-diff-view](https://github.com/MrWangJustToDo/git-diff-view) | A Diff View component, just like Github |
 | `<hex-color-picker>` | [react-colorful](https://github.com/omgovich/react-colorful) | A simple color picker |
 
+<br>
 
 ## 🚀 Getting Started
 
@@ -75,6 +78,8 @@ Run the Angular test app:
 ```bash
 yarn start:angular-app
 ```
+
+<br>
 
 ## 💭 Final Thoughts
 
