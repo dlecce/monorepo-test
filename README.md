@@ -67,9 +67,9 @@ Comment or uncomment the import lines depending on which library you want to tes
 
 ![main](assets/main.png)
 
-![main](assets/diff-view.component.png)
+![diff-view.component](assets/diff-view.component.png)
 
-![main](assets/hex-color-picker.component.png)
+![hex-color-picker](assets/hex-color-picker.component.png)
 
 ### Start
 
