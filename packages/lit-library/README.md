@@ -112,9 +112,9 @@ Specifically:
 This drastically increases the final bundle size, as showed in the bundle-stats.html:
 
 ![lit-library.build.BEFORE](../../assets/lit-library.build.BEFORE.png)
-1. hex-color-picker Web Component (it includes the `react-colorful` library)
+1. `<hex-color-picker>` Web Component (it includes the `react-colorful` library)
 2. chunk that includes common parts (React and React DOM runtime, Lit runtime, ...)
-3. diff-view Web Component (it includes the `@git-diff-view/react` library)
+3. `<diff-view>` Web Component (it includes the `@git-diff-view/react` library)
 
 <br>
 
@@ -141,9 +141,9 @@ This technique leads to a substantial improvement in the final bundle size, with
 
 ![lit-library.build.AFTER](../../assets/lit-library.build.AFTER.png)
 
-1. hex-color-picker Web Component (it includes the `react-colorful` library)
+1. `<hex-color-picker>` Web Component (it includes the `react-colorful` library)
 2. chunk that includes common parts (React and React DOM runtime, Lit runtime, ...)
-3. diff-view Web Component (it includes the `@git-diff-view/react` library)
+3. `<diff-view>` Web Component (it includes the `@git-diff-view/react` library)
 
 <br>
 
