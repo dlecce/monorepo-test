@@ -83,7 +83,12 @@ yarn start:angular-app
 
 ## 💭 Final Thoughts
 
-***NOTE***: refer to the README of each package for the analysis performed on each library.
+**NOTE**: refer to the README of each package for the analysis performed on each library:
+- [`lit-library`](packages/lit-library/README.md)
+- [`r2wc-library`](packages/r2wc-library/README.md)
+- [`stencil-library`](packages/stencil-library/README.md)
+
+<br>
 
 While all three libraries can produce a working solution, in my personal opinion, the ***Lit + Vite*** approach is the best for the following reasons:
 
@@ -97,4 +102,4 @@ While all three libraries can produce a working solution, in my personal opinion
 
 - Vite also generates shared chunks automatically (e.g., React runtime is placed in a separate chunk), improving performance.
 
-- The Vite build process is highly customizable — for example, when using the diff-view React component, you can easily exclude unnecessary syntax highlight languages, significantly reducing the final bundle size.
+- The Vite build process is highly customizable - for example, when using the diff-view React component, you can easily exclude unnecessary syntax highlight languages, significantly reducing the final bundle size.
