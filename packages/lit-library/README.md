@@ -105,11 +105,18 @@ While analyzing the bundle, it became clear that the `@git-diff-view/react` libr
 
 Specifically:
 
-- `git-diff-view` internally uses [highlight.js](https://highlightjs.org/) via the `lowlight` library
+- `@git-diff-view/react` internally uses [highlight.js](https://highlightjs.org/) via the `lowlight` library
 - Unfortunately, it **loads all available languages by default**
 - It does **not provide a configuration API** to limit or customize which languages are included
 
 This drastically increases the final bundle size, as showed in the bundle-stats.html:
+
+![lit-library.build.BEFORE](../../assets/lit-library.build.BEFORE.png)
+1. hex-color-picker Web Component (it includes the `react-colorful` library)
+2. chunk that includes common parts (React and React DOM runtime, Lit runtime, ...)
+3. diff-view Web Component (it includes the `@git-diff-view/react` library)
+
+<br>
 
 ![lit-library.bundle.BEFORE](../../assets/lit-library.bundle.BEFORE.png)
 
@@ -130,6 +137,22 @@ resolve: {
 }
 ```
 
-This technique leads to a substantial improvement in the final bundle size, without changing the source code of git-diff-view:
+This technique leads to a substantial improvement in the final bundle size, without changing the source code of `@git-diff-view/react`:
+
+![lit-library.build.AFTER](../../assets/lit-library.build.AFTER.png)
+
+1. hex-color-picker Web Component (it includes the `react-colorful` library)
+2. chunk that includes common parts (React and React DOM runtime, Lit runtime, ...)
+3. diff-view Web Component (it includes the `@git-diff-view/react` library)
+
+<br>
 
 ![lit-library.bundle.AFTER](../../assets/lit-library.bundle.AFTER.png)
+
+### Results: Size reduction
+Thanks to this customization, the bundle size was reduced by **over 80%**, with no change to the source code of the third-party library.
+
+| | Size |
+|---|---|
+| Before | **1,129.96 kB** |
+| After | **198.03 kB** |

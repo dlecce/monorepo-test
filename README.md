@@ -27,7 +27,7 @@ The project is a monorepo ([Yarn workspace](https://yarnpkg.com/features/workspa
 Each implementation of the library exposes two Web Components:
 | Web Component | React library | Description |
 |---|---|---|
-| `<diff-view>` | [git-diff-view](https://github.com/MrWangJustToDo/git-diff-view) | A Diff View component, just like Github |
+| `<diff-view>` | [@git-diff-view/react](https://github.com/MrWangJustToDo/git-diff-view) | A Diff View component, just like Github |
 | `<hex-color-picker>` | [react-colorful](https://github.com/omgovich/react-colorful) | A simple color picker |
 
 <br>
