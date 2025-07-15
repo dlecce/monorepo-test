@@ -14,7 +14,7 @@
     "build:angular-app": "yarn workspace angular-app run build",
     
     "start:lit-library": "yarn workspace lit-library run dev",
-    "start:r2wc-library": "yarn workspace lit-library run dev",
+    "start:r2wc-library": "yarn workspace r2wc-library run dev",
     "start:stencil-library": "yarn workspace stencil-library run start",
     "start:angular-app": "yarn workspace angular-app run start"
   },

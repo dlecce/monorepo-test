@@ -47,6 +47,8 @@ disconnectedCallback() {
 - It ensures the associated React component is **cleanly unmounted**, avoiding memory leaks.
 
 ## Disabling Shadow DOM
+⚠️ Not all third-party React components are compatible with Shadow DOM.
+
 By default, Lit components render their DOM inside a **Shadow DOM root**, which encapsulates styles and structure from the rest of the page. This is useful for isolating Web Components, but it can create issues when integrating with third-party libraries, especially those that rely on global CSS injection.
 
 ### The Problem
@@ -123,7 +125,8 @@ This drastically increases the final bundle size, as showed in the bundle-stats.
 ### Solution: Customizing `lowlight` via Vite alias
 To work around this, a custom instance of `lowlight` was created, registering **only the `json` language**, which is the only one required in this use case:
 
-**src/utils/lowlight/index.ts**
+
+[`src/utils/lowlight/index.ts`](src/utils/lowlight/index.ts)
 ```typescript
 const lowlight = createLowlight({ json });
 ```
