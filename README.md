@@ -98,7 +98,7 @@ Despite their differences, all libraries successfully delivered working Web Comp
 | **Lifecycle Control** | ✅ Full (via `firstUpdated`, etc.) | ❌ None | ✅ Full (via `componentDidLoad`, etc.) |
 | **Shadow DOM Support** | ✅ Toggle via `createRenderRoot` | ✅ Via `shadow` option | ✅ Via `@Component({ shadow })` |
 | **Angular Compatibility** | ✅ Excellent | ⚠️ Limited for event handlers | ✅ Excellent |
-| **Bundle Optimization** | ✅ Excellent (shared chunks via Vite) | ✅ Good (shared chunks via Vite) | ❌ Poor (no chunk splitting) |
+| **Bundle Optimization** | ✅ Excellent (shared chunks via Vite) | ✅ Excellent (shared chunks via Vite) | ❌ Poor (no chunk splitting) |
 | **React Runtime Splitting** | ✅ Yes  | ✅ Yes | ❌ No |
 | **Learning Curve** | Medium | Low | Medium |
 | **Lazy Loading** | ❌ No | ❌ No | ⚠️ Ineffective |
