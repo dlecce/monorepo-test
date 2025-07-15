@@ -1,6 +1,6 @@
 # monorepo-test
 
-## 🎯 Project Goals
+## Project Goals
 
 - Create a Web Components library that wraps third-party React components and use it in an Angular app.
 - Explore and test the following 3 approaches: 
@@ -8,10 +8,7 @@
     - [`react-to-web-component (R2WC)`](https://github.com/bitovi/react-to-web-component)
     - [Stencil.js](https://stenciljs.com/)
 
-<br>
-
-## 📦 Project Overview
-
+## Project Overview
 The project is a monorepo ([Yarn workspace](https://yarnpkg.com/features/workspaces)), containing the following packages:
 
 
@@ -22,17 +19,13 @@ The project is a monorepo ([Yarn workspace](https://yarnpkg.com/features/workspa
 | [`r2wc-library`](packages/r2wc-library/README.md) | Library built using R2WC + Vite |
 | [`stencil-library`](packages/stencil-library/README.md) | Library built using Stencil.js |
 
-<br>
-
 Each implementation of the library exposes two Web Components:
 | Web Component | React library | Description |
 |---|---|---|
 | `<diff-view>` | [@git-diff-view/react](https://github.com/MrWangJustToDo/git-diff-view) | A Diff View component, just like Github |
 | `<hex-color-picker>` | [react-colorful](https://github.com/omgovich/react-colorful) | A simple color picker |
 
-<br>
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -79,10 +72,7 @@ Run the Angular test app:
 yarn start:angular-app
 ```
 
-<br>
-
-## 💭 Final Thoughts
-
+## Final Thoughts
 **NOTE**: refer to the README of each package for the analysis performed on each library:
 - [`lit-library`](packages/lit-library/README.md)
 - [`r2wc-library`](packages/r2wc-library/README.md)
@@ -90,16 +80,26 @@ yarn start:angular-app
 
 <br>
 
-While all three libraries can produce a working solution, in my personal opinion, the ***Lit + Vite*** approach is the best for the following reasons:
+All three libraries successfully demonstrate how to wrap React components as Web Components and integrate them into an Angular app. Each approach has its own strengths and limitations:
 
-- Lit gives full control over the Web Component implementation, unlike R2WC which hides some internal logic.
+- **Lit** offers a great balance between flexibility, control, and bundle optimization. Its lifecycle hooks provide explicit control over React mounting, and Vite enables shared chunking and advanced customization. This makes Lit a solid choice for building modular and performance-oriented Web Components.
 
-- Lit’s decorators are simple and intuitive, making it easy to manage properties, attributes, and events.
+- **R2WC** stands out for its simplicity: very little boilerplate is required, making it ideal for quick prototypes or simple components. However, the lack of lifecycle visibility and limited interoperability with frameworks like Angular (especially for event handlers) can be a drawback for complex scenarios.
 
-- Lit has a very small runtime (~5 KB minified and compressed).
+- **Stencil** is the most “framework-like” of the three, and provides a rich TypeScript-first API similar to Angular. However, in my tests, its lazy-loading capabilities were ineffective in splitting the bundle, leading to a larger final size.
 
-- Vite makes it easy to define multiple entry points, allowing to export individual Web Components separately. This way, only the needed components are imported, rather than the entire library.
+Despite their differences, all libraries successfully delivered working Web Components. **Personally, I find Lit to be the most balanced and scalable solution**, thanks to its clear structure, small runtime, and compatibility with modern bundlers like Vite.
 
-- Vite also generates shared chunks automatically (e.g., React runtime is placed in a separate chunk), improving performance.
-
-- The Vite build process is highly customizable - for example, when using the diff-view React component, you can easily exclude unnecessary syntax highlight languages, significantly reducing the final bundle size.
+## Comparison Table
+| Feature / Criteria | **Lit** | **R2WC** | **Stencil** |
+|---|---|---|---|
+| **Complexity** | Medium | Low | Medium |
+| **Boilerplate Required** | Yes (manual mount/render) | No (automatic) | Yes (manual mount/render) |
+| **Lifecycle Control** | ✅ Full (via `firstUpdated`, etc.) | ❌ None | ✅ Full (via `componentDidLoad`, etc.) |
+| **Shadow DOM Support** | ✅ Toggle via `createRenderRoot` | ✅ Via `shadow` option | ✅ Via `@Component({ shadow })` |
+| **Angular Compatibility** | ✅ Excellent | ⚠️ Limited for event handlers | ✅ Excellent |
+| **Bundle Optimization** | ✅ Excellent (shared chunks via Vite) | ✅ Good (shared chunks via Vite) | ❌ Poor (no chunk splitting) |
+| **React Runtime Splitting** | ✅ Yes  | ✅ Yes | ❌ No |
+| **Learning Curve** | Medium | Low | Medium |
+| **Lazy Loading** | ❌ No | ❌ No | ⚠️ Ineffective |
+| **Bundle Size** | ✅ Small | ✅ Small | ❌ Larger (~380 kB) |
