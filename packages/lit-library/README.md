@@ -86,7 +86,7 @@ yarn build   # Build the library into ./dist
 ```
 
 ## Bundle Analysis
-The Vite build automatically creates optimized shared chunks. For example, the React runtime is placed in a separate chunk from the Lit runtime, avoiding duplication when wrapping multiple React components.
+The Vite build automatically creates optimized shared chunks. For example, the React runtime is placed in a separate chunk, avoiding duplication when wrapping multiple React components.
 
 ### Bundle inspection
 To analyze the output size, the project uses `rollup-plugin-visualizer`:
